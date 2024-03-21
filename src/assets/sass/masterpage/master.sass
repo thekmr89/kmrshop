@@ -1,0 +1,203 @@
+@import '../_common'
+
+header
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    z-index: 5
+    padding: 12px 0
+    border-bottom: 1px solid $prime
+    background: $white
+    .header-wrapper
+        padding: 0 35px
+        @include flex
+        align-items: center
+        .colA
+            flex: 0 1 auto
+            .logo
+                font-size: 28px
+                font-family: $RD-SemiBold
+                display: inline-flex
+                flex-direction: column
+                align-items: center
+                line-height: 1
+                span
+                    font-family: $Kanit
+                    font-size: 16px
+                    font-weight: 200
+                    color: $white
+                    background: $black
+                    display: inline-block
+                    width: 100%
+                    text-align: center
+                    padding: 2px 4px 4px
+        .colB
+            flex: 1
+            text-align: right
+            .nav
+                display: inline-block
+                vertical-align: middle
+                margin-right: 30px
+                li
+                    a
+                        font-weight: 400
+                    &.hasdropdown
+                        position: relative
+                        padding-right: 20px
+                        &::before
+                            content: '\f0dd'
+                            font-family: 'Font Awesome 6 Free'
+                            font-weight: 900
+                            font-size: 16px
+                            position: absolute
+                            top: -3px
+                            right: 0
+                        menu
+                            text-align: left
+                            background-color: $white
+                            border-radius: 5px
+                            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+                            box-sizing: border-box
+                            opacity: 0
+                            overflow: hidden
+                            pointer-events: none
+                            position: absolute
+                            top: 100%
+                            left: auto
+                            right: 0
+                            width: 200px
+                            transform-origin: 50% 0
+                            transform: scale(0.75) translateY(-21px)
+                            transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out
+                            z-index: 7
+                            max-height: 300px
+                            overflow-y: auto
+                            &::-webkit-scrollbar
+                                width: 3px
+                            &::-webkit-scrollbar-thumb
+                                background: $primary
+                                border-radius: 5px
+                            li
+                                a
+                                    display: block
+                                    padding: 4px 20px
+                                    text-transform: capitalize
+                                    font-weight: 300
+                                    &:hover
+                                        background: $prime
+                        &:hover
+                            menu
+                                opacity: 1
+                                pointer-events: auto
+                                transform: scale(1) translateY(0)
+
+            .btn
+                position: relative
+                --dotsize: 16px
+                .dot
+                    position: absolute
+                    top: calc(var(--dotsize) * -.5)
+                    right: calc(var(--dotsize) * -.5)
+                    height: var(--dotsize)
+                    width: var(--dotsize)
+                    border-radius: 50%
+                    background: red
+                    color: $white
+                    text-align: center
+                    font-size: 10px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    align-items: center
+
+
+//popup
+
+.model
+    position: fixed
+    top: 0
+    bottom: 0
+    z-index: 7
+    .close
+        position: absolute
+        top: 0
+        right: 0
+        background: none
+        border: none
+        padding: 10px
+        font-size: 25px
+        cursor: pointer
+    &.model-cart 
+        right: 0
+        max-width: 500px
+        width: 100%
+        background: $white
+        transform: translateX(100%)
+        transition: .4s ease
+        &.is-open
+            transform: translateX(0)
+        .model-body
+            --padright: 20px
+            padding: 50px 0 30px 30px
+            height: 100%
+            .cart-titl
+                margin-bottom: 30px
+                display: flex
+                padding-right: var(--padright)
+                align-items: center
+                justify-content: space-between
+                p
+                    span
+                        font-weight: 500
+            .cart-items
+                height: 100%
+                overflow-y: auto
+                padding-right: var(--padright)
+                padding-bottom: 65px
+                &::-webkit-scrollbar
+                    width: 4px
+                    background: transparent
+                &::-webkit-scrollbar-track
+                    box-shadow: none
+                &::-webkit-scrollbar-thumb
+                    background-color: $primary
+                .col-md
+                    @include flex
+                    border: 1px solid $prime
+                    border-radius: 6px
+                    overflow: hidden
+                    &:not(:last-child)
+                        margin-bottom: 12px
+                    img
+                        flex: 0 1 60px
+                        max-width: 60px
+                        width: 100%
+                        aspect-ratio: 1
+                        object-fit: contain
+                        padding: 10px
+                        border-right: 1px solid $prime
+                    .mid
+                        flex: 1
+                        padding: 10px
+                        span
+                            display: block
+                            margin-bottom: 5px
+                            line-height: 1.3
+                        p
+                            font-weight: 500
+                    .delt-btn
+                        flex: 0 1 auto
+                        background: none
+                        border: none
+                        padding: 10px
+                        cursor: pointer
+                .no-item
+                    text-align: center
+                    padding-top: 40px
+                    svg
+                        font-size: 40px
+                    p
+                        padding-top: 15px
+                        font-size: 20px
+                        font-weight: 500
