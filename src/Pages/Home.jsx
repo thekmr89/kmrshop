@@ -1,4 +1,5 @@
 import '../assets/sass/home/home.css'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBag,faCircleArrowRight,faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -10,7 +11,12 @@ import { useMaster } from '../Components/MasterPage';
 
 export const Home = () => {
 
-    const { productData,cartItems,addtoCart,removefromCart } = useMaster();
+    const { productData,cartItems,addtoCart,removefromCart} = useMaster();
+    const [visibleProductCount, setVisibleProductCount] = useState(5);
+    const loadMore = () => {
+        setVisibleProductCount(prevVisibleProductCount => prevVisibleProductCount + 5);
+    };
+
     return (
         <>
         <div className="home-banner">
@@ -86,6 +92,24 @@ export const Home = () => {
                     </div>
             </div>
         </div>
+        <div className="pagination" style={{ padding: '60px 0' }}>
+                <div className="container">
+                    <div className="flex" style={{gap: '45px 0' }}>
+                        {productData &&
+                            productData.slice(0, visibleProductCount).map((product, index) => {
+                                const { image } = product;
+                                return (
+                                    <div className="col" style={{ flex: '0 1 25%' }} key={index}>
+                                        <img src={image} alt="" style={{ width: '100%', aspectRatio: '1', objectFit: 'contain' ,padding: '30px'}} />
+                                    </div>
+                                );
+                            })}
+                    </div>
+                    {visibleProductCount < productData.length && (
+                        <button onClick={loadMore} className='btn' style={{ display: 'block',textAlign: 'center' ,margin: '0 auto'}}>Load More</button>
+                    )}
+                </div>
+            </div>
         </>
     );
 };
