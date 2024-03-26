@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faShoppingBag,faXmark,faTrash,faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-
+import slugify from 'slugify'; 
 
 const Mastercontext = createContext(); 
 
@@ -52,9 +52,13 @@ export const MasterPage = ({ children }) => {
         setCartItems(updatedCartItems);
         sessionStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
     }
+
+    const slugifytitle = (categoryName) => {
+        return slugify(categoryName, { lower: true,remove: /[*+~.()'"!:@]/g });
+    };
      
     return (
-        <Mastercontext.Provider value={{productData,cartItems,setProductData,addtoCart,removefromCart}}>
+        <Mastercontext.Provider value={{productData,cartItems,categories,setProductData,addtoCart,removefromCart,slugifytitle}}>
             <div>
                 <header>
                     <div className="header-wrapper">
@@ -67,7 +71,7 @@ export const MasterPage = ({ children }) => {
                                     <Link to={'/products'}>Products</Link>
                                     <menu className="dropdown-menu">
                                         {categories.map((category, index) => (
-                                            <li key={index}><Link to={'/'}>{category}</Link></li>
+                                            <li key={index}><Link to={`/products/${slugifytitle(category)}`}>{category}</Link></li>
                                         ))}
                                     </menu>
                                 </li>

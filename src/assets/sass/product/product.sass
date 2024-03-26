@@ -1,0 +1,46 @@
+@import '../_common'
+.prod-SecA
+    padding: 75px 0
+    .heading
+        margin-bottom: 55px
+    .grid
+        grid-template-columns: repeat(4,1fr)
+        grid-gap: 25px 35px
+        .col
+            border: 1px solid $prime
+            border-radius: 12px
+            @include flex
+            flex-direction: column
+            overflow: hidden
+            line-height: 0
+            box-shadow: rgba(99,99,99,.2) 0px 2px 8px 0px
+            &:hover
+                figure
+                    img
+                        transform: scale(.8)
+                figcaption
+                    background: $black
+            figure
+                width: 100%
+                flex: 1
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 10px
+                background: $prime
+            img
+                display: block
+                width: calc(100% * .7)
+                height: calc(100% * .7)
+                object-fit: contain
+                transition: .5s ease
+                @include primary-filter
+            figcaption
+                transition: .5s ease
+                flex: 0 1 auto
+                background: $primary
+                color: $white
+                padding: 15px
+                text-align: center
+                h5
+                    font-weight: 400

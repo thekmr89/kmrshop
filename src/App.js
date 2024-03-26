@@ -1,6 +1,7 @@
 import  React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from './Pages/Home';
+import { ProductCategory } from './Pages/ProductCategory';
 import { ProductListing } from './Pages/ProductListing';
 import { MasterPage } from './Components/MasterPage';
 import './assets/css/style.css'
@@ -19,7 +20,8 @@ function App() {
       <MasterPage>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/products" element={<ProductListing />} />
+          <Route path="/products" element={<ProductCategory />} />
+          <Route path="/products/:productlisting" element={<ProductListing />} />
         </Routes>
       </MasterPage>
     </Router>
