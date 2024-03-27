@@ -1,8 +1,9 @@
 import '../assets/sass/home/home.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactStars from "react-rating-stars-component";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingBag,faCircleArrowRight,faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBag,faCircleArrowRight,faTrash,faStar,faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { useMaster } from '../Components/MasterPage';
@@ -56,11 +57,12 @@ export const Home = () => {
                         >
                             {productData &&
                                 productData.map((product) => {
-                                    const { id, title, price, category,image } = product;
+                                    const { id, title, price, category,image,rating } = product;
                                     const isProductInCart = cartItems.some(item => item.id === product.id);
                                     return (
                                         <SplideSlide key={id}>
                                             <div className="item">
+                                            <ReactStars count={5} size={25} value={rating.rate} isHalf={true} halfIcon={<FontAwesomeIcon icon={faStarHalfStroke} style={{"--fa-secondary-color": "#000000",}} />} filledIcon={<FontAwesomeIcon icon={faStar} />} emptyIcon={<FontAwesomeIcon icon={faStar} />} activeColor="#ffd700"/>
                                                 <Link to={`/products/${slugifytitle(category)}/${id}`} className='figure'>
                                                     <img src={image} alt={title}></img>
                                                     <span className="strip">${price}</span>
