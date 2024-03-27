@@ -71,7 +71,7 @@ export const MasterPage = ({ children }) => {
                                     <Link to={'/products'}>Products</Link>
                                     <menu className="dropdown-menu">
                                         {categories.map((category, index) => (
-                                            <li key={index}><Link to={`/products/${slugifytitle(category)}`}>{category}</Link></li>
+                                            <li key={index}><Link to={`/products/${slugifytitle(category)}`} onClick={() => window.scrollTo({ top: 0 })}>{category}</Link></li>
                                         ))}
                                     </menu>
                                 </li>

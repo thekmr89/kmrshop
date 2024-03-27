@@ -1,15 +1,15 @@
-import  React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from './Pages/Home';
 import { ProductCategory } from './Pages/ProductCategory';
 import { ProductListing } from './Pages/ProductListing';
+import { ProductDetail } from './Pages/ProductDetail';
+import { PageNotFound } from './Pages/PageNotFound';
 import { MasterPage } from './Components/MasterPage';
-import './assets/css/style.css'
+import './assets/css/style.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-
 function App() {
-
   useEffect(() => {
     document.documentElement.style.setProperty('--headerheight', window.getComputedStyle(document.querySelector("header")).height);
     document.documentElement.style.setProperty('--footerheight', window.getComputedStyle(document.querySelector("footer")).height);
@@ -21,11 +21,12 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/products" element={<ProductCategory />} />
-          <Route path="/products/:productlisting" element={<ProductListing />} />
+          <Route path="/products/:category" element={<ProductListing />} />
+          <Route path="/products/:category/:id" element={<ProductDetail />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </MasterPage>
     </Router>
-
   );
 }
 

@@ -1,5 +1,5 @@
 import '../assets/sass/home/home.css'
-import { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingBag,faCircleArrowRight,faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -11,12 +11,8 @@ import { useMaster } from '../Components/MasterPage';
 
 export const Home = () => {
 
-    const { productData,cartItems,addtoCart,removefromCart} = useMaster();
-    const [visibleProductCount, setVisibleProductCount] = useState(5);
-    const loadMore = () => {
-        setVisibleProductCount(prevVisibleProductCount => prevVisibleProductCount + 5);
-    };
-
+    const { productData,cartItems,addtoCart,removefromCart,slugifytitle} = useMaster();
+    
     return (
         <>
         <div className="home-banner">
@@ -39,7 +35,7 @@ export const Home = () => {
                 </div>
                 <div className="product-demo">
                         <Splide
-                            className="product-slider"
+                            className="product-slider products-list"
                             options={{
                                 type: 'slide',
                                 gap: "20px",
@@ -65,7 +61,7 @@ export const Home = () => {
                                     return (
                                         <SplideSlide key={id}>
                                             <div className="item">
-                                                <Link to={'/'} className='figure'>
+                                                <Link to={`/products/${slugifytitle(category)}/${id}`} className='figure'>
                                                     <img src={image} alt={title}></img>
                                                     <span className="strip">${price}</span>
                                                     <span className="desc">{category}</span>
@@ -92,24 +88,6 @@ export const Home = () => {
                     </div>
             </div>
         </div>
-        <div className="pagination" style={{ padding: '60px 0' }}>
-                <div className="container">
-                    <div className="flex" style={{gap: '45px 0' }}>
-                        {productData &&
-                            productData.slice(0, visibleProductCount).map((product, index) => {
-                                const { image } = product;
-                                return (
-                                    <div className="col" style={{ flex: '0 1 25%' }} key={index}>
-                                        <img src={image} alt="" style={{ width: '100%', aspectRatio: '1', objectFit: 'contain' ,padding: '30px'}} />
-                                    </div>
-                                );
-                            })}
-                    </div>
-                    {visibleProductCount < productData.length && (
-                        <button onClick={loadMore} className='btn' style={{ display: 'block',textAlign: 'center' ,margin: '0 auto'}}>Load More</button>
-                    )}
-                </div>
-            </div>
         </>
     );
 };
