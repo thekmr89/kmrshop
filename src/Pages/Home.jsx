@@ -21,7 +21,7 @@ export const Home = () => {
                 <div className="banner-wrapper">
                     <div className="content">
                         <h1>Explore endless treasures with every click.</h1>
-                        <button className="btn"><FontAwesomeIcon icon={faShoppingBag} />Shop Now</button>
+                        <Link to={'/kmrshop/products/'} className="btn"><FontAwesomeIcon icon={faShoppingBag} />Shop Now</Link>
                     </div>
                     <figure className='bannerImg'>
                         <img src={require('../assets/images/bannerimg.png')} alt="" />
