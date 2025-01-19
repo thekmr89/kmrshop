@@ -37,7 +37,7 @@ export const ProductListing = () => {
                 const isProductInCart = cartItems.some(item => item.id === product.id);
                 return (
                   <div className="item" key={product.id}>
-                    <Link to={`/products/${slugifytitle(product.category)}/${product.id}`} className='figure' onClick={() => window.scrollTo({ top: 0 })}>
+                    <Link to={`/kmrshop/products/${slugifytitle(product.category)}/${product.id}`} className='figure' onClick={() => window.scrollTo({ top: 0 })}>
                       <img src={product.image} alt={product.title} />
                       <span className="strip">${product.price}</span>
                       <span className="desc">{product.category}</span>

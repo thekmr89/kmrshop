@@ -63,7 +63,7 @@ export const Home = () => {
                                         <SplideSlide key={id}>
                                             <div className="item">
                                             <ReactStars count={5} size={25} value={rating.rate} isHalf={true} halfIcon={<FontAwesomeIcon icon={faStarHalfStroke} style={{"--fa-secondary-color": "#000000",}} />} filledIcon={<FontAwesomeIcon icon={faStar} />} emptyIcon={<FontAwesomeIcon icon={faStar} />} activeColor="#ffd700"/>
-                                                <Link to={`/products/${slugifytitle(category)}/${id}`} className='figure'>
+                                                <Link to={`/kmrshop/products/${slugifytitle(category)}/${id}`} className='figure'>
                                                     <img src={image} alt={title}></img>
                                                     <span className="strip">${price}</span>
                                                     <span className="desc">{category}</span>

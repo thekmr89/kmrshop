@@ -72,7 +72,7 @@ export const ProductDetail = () => {
             {filteredProducts.map(product => (
               <SplideSlide key={product.id}>
                 <div className="item">
-                  <Link to={`/products/${slugifytitle(product.category)}/${product.id}`} className='figure' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                  <Link to={`/kmrshop/products/${slugifytitle(product.category)}/${product.id}`} className='figure' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                     <img src={product.image} alt={product.title} />
                     <span className="strip">${product.price}</span>
                     <span className="desc">{product.category}</span>

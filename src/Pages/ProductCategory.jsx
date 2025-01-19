@@ -23,7 +23,7 @@ export const ProductCategory = () => {
                     </div>
                     <div className="grid">
                     {categories.map((category, index) => (
-                            <Link className='col' key={index} to={`/products/${slugifytitle(category)}`} onClick={() => window.scrollTo({ top: 0 })}>
+                            <Link className='col' key={index} to={`/kmrshop/products/${slugifytitle(category)}`} onClick={() => window.scrollTo({ top: 0 })}>
                                 <figure> <img src={require(`../assets/images/category/${categoryImages[index]}`)} alt="" /></figure>
                                 <figcaption><h5>{category}</h5></figcaption>
                             </Link>
