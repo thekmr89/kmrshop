@@ -1,0 +1,41 @@
+@import '../_common'
+.home-banner
+    padding: 75px 0
+    .banner-wrapper
+        @include flex
+        align-items: center
+        justify-content: space-between
+        .content
+            flex: 0 1 50%
+            button,a
+                display: inline-block
+                margin-top: 50px
+            a
+                color: $white
+                font-weight: 500
+        .bannerImg
+            flex: 0 1 27%
+            img
+                width: 100%
+.homeSecA
+    .heading
+        padding-bottom: 65px
+    .product-demo
+        .product-slider
+            .splide__arrow
+                background: $prime
+                height: 2.5rem
+                width: 2.5rem
+                opacity: 1
+                &:hover
+                    background: $primary
+                    svg
+                        path
+                            fill: $white
+                svg
+                    path
+                        fill: $black
+                &.splide__arrow--prev
+                    left: -5%
+                &.splide__arrow--next
+                    right: -5%

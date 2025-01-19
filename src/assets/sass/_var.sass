@@ -1,0 +1,112 @@
+@charset "UTF-8"
+$screen-320: 320px
+$screen-365: 365px
+$screen-420: 420px
+$screen-520: 520px
+$screen-540: 540px
+$screen-675: 675px
+$screen-767: 767px
+$screen-860: 860px
+$screen-991: 991px
+$screen-992: 992px
+$screen-1024: 1024px
+$screen-1140: 1140px
+$screen-1152: 1152px
+$screen-1230: 1230px
+$screen-1280: 1280px
+$screen-1300: 1300px
+$screen-1366: 1366px
+$screen-1367: 1367px
+$screen-1440: 1440px
+$screen-1536: 1536px
+@mixin respond-to($media)
+    @if $media == screen-320
+        @media only screen and (max-width: $screen-320)
+            @content
+    @else if $media == screen-365
+        @media only screen and (max-width: $screen-365)
+            @content
+    @else if $media == screen-420
+        @media only screen and (max-width: $screen-420)
+            @content
+    @else if $media == screen-520
+        @media (max-width: $screen-520)
+            @content
+    @else if $media == screen-540
+        @media (max-width: $screen-540)
+            @content
+    @else if $media == screen-675
+        @media (max-width: $screen-675)
+            @content
+    @else if $media == screen-767
+        @media (max-width: $screen-767)
+            @content
+    @else if $media == phnLandscape
+        @media only screen  and (max-width: $screen-767) and  (orientation : landscape)
+            @content
+    @else if $media == screen-860
+        @media (max-width: $screen-860)
+            @content
+    @else if $media == screen-991
+        @media (max-width: $screen-991)
+            @content
+    @else if $media == screen-992
+        @media (min-width: $screen-992)
+            @content
+    @else if $media == screen-1024
+        @media (max-width: $screen-1024)
+            @content
+    @else if $media == screen-1140
+        @media (max-width: $screen-1140)
+            @content
+    @else if $media == screen-1152
+        @media (max-width: $screen-1152)
+            @content
+    @else if $media == screen-1230
+        @media (max-width: $screen-1230)
+            @content
+    @else if $media == screen-1280
+        @media (max-width: $screen-1280)
+            @content
+    @else if $media == screen-1300
+        @media (max-width: $screen-1300)
+            @content
+    @else if $media == screen-1366
+        @media (max-width: $screen-1366)
+            @content
+    @else if $media == screen-1367
+        @media (min-width: $screen-1367)
+            @content
+    @else if $media == screen-1440
+        @media (max-width: $screen-1440)
+            @content
+    @else if $media == screen-1536
+        @media (max-width: $screen-1536)
+            @content
+
+// Font Family
+$Kanit: 'Kanit', sans-serif
+$IBM: 'IBM'
+$Satoshi: 'Satoshi'
+$RD-Medium: 'RD Medium'
+$RD-SemiBold: 'RD SemiBold'
+
+//mixins
+    
+@mixin flex
+    display: flex
+    flex-wrap: wrap
+@mixin primary-filter
+    filter: brightness(0) saturate(100%) invert(40%) sepia(79%) saturate(5683%) hue-rotate(233deg) brightness(103%) contrast(105%)
+@mixin prime-filter
+   filter: brightness(0) saturate(100%) invert(70%) sepia(97%) saturate(1%) hue-rotate(10deg) brightness(105%) contrast(92%)
+
+// Colors
+
+$primary: #5356FF
+$secondary: #67C6E3
+$prime: #dbdbdb
+
+$white: #fff
+$black: #000
+$text: #666666

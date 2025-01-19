@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'IBM';
+    src: url('IBM.woff2') format('woff2'),
+        url('IBM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url('Satoshi-Bold.woff2') format('woff2'),
+        url('Satoshi-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'RD Medium';
+    src: url('RationalDisplay-Medium.woff2') format('woff2'),
+        url('RationalDisplay-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'RD SemiBold';
+    src: url('RationalDisplay-SemiBold.woff2') format('woff2'),
+        url('RationalDisplay-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

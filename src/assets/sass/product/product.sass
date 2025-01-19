@@ -1,0 +1,103 @@
+@import '../_common'
+.prod-SecA
+    padding: 75px 0
+    .heading
+        margin-bottom: 55px
+    .grid
+        grid-template-columns: repeat(4,1fr)
+        grid-gap: 25px 35px
+        .col
+            border: 1px solid $prime
+            border-radius: 12px
+            @include flex
+            flex-direction: column
+            overflow: hidden
+            line-height: 0
+            box-shadow: rgba(99,99,99,.2) 0px 2px 8px 0px
+            &:hover
+                figure
+                    img
+                        transform: scale(.8)
+                figcaption
+                    background: $black
+            figure
+                width: 100%
+                flex: 1
+                display: flex
+                align-items: center
+                justify-content: center
+                padding: 10px
+                background: $prime
+            img
+                display: block
+                width: calc(100% * .7)
+                height: calc(100% * .7)
+                object-fit: contain
+                transition: .5s ease
+                @include primary-filter
+            figcaption
+                transition: .5s ease
+                flex: 0 1 auto
+                background: $primary
+                color: $white
+                padding: 15px
+                text-align: center
+                h5
+                    font-weight: 400
+
+.prod-List-secA
+    padding: 75px 0
+    .heading
+        margin-bottom: 65px
+    .prod-con
+        display: grid
+        grid-template-columns: repeat(3,1fr)
+        grid-gap: 30px 20px
+    .btn
+        display: block
+        text-align: center
+        margin: 60px auto 0
+
+.prod-dtl-secA
+    padding: 75px 0
+    .flex
+        .colA
+            flex: 0 1 30%
+            img
+                width: 100%
+                aspect-ratio: 1
+                object-fit: contain
+        .colB
+            flex: 1
+            padding-left: 4rem
+            .card
+                padding-top: 30px
+                h1
+                    font-size: 42px
+                span
+                    font-weight: 600
+                    font-size: 20px
+                    display: block
+                    margin: 20px 0 30px
+                .add-to-cart
+                    margin-top: 50px
+                    background: $black
+                    color: $white
+                    border: none
+                    display: block
+                    padding: 9px 25px
+                    border-radius: 5px
+                    transition: .3s ease
+                    cursor: pointer
+                    svg
+                        margin-left: 8px
+                        height: 15px
+                    &:hover
+                        background: $primary
+.prod-dtl-secB
+    padding: 30px 0
+    .heading
+        margin-bottom: 65px
+    .splide__arrow
+        &:disabled
+            display: none
