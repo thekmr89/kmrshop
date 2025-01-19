@@ -63,7 +63,7 @@ export const MasterPage = ({ children }) => {
                 <header>
                     <div className="header-wrapper">
                         <div className="colA">
-                            <Link className="logo" to={'/'}>KMR<span>shop</span></Link>
+                            <Link className="logo" to={'/kmrshop/'}>KMR<span>shop</span></Link>
                         </div>
                         <div className="colB">
                             <ul className='nav'>
@@ -83,13 +83,13 @@ export const MasterPage = ({ children }) => {
                 <main>
                     {children}
                 </main>
-                <footer>
+                {/* <footer>
                     <div className="footer-wrapper">
                         <div className="colA">
                             <Link className="logo" to={'/'}>KMR<span>shop</span></Link>
                         </div>
                     </div>
-                </footer>
+                </footer> */}
                 <div className={`model model-cart ${pop === 'model-cart' ? 'is-open' : ''}`}>
                     <button className="close" onClick={() => hidePop('model-cart')}><FontAwesomeIcon icon={faXmark} /></button>
                     <div className="model-body">
