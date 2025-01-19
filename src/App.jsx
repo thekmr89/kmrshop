@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 function App() {
   useEffect(() => {
     document.documentElement.style.setProperty('--headerheight', window.getComputedStyle(document.querySelector("header")).height);
-    document.documentElement.style.setProperty('--footerheight', window.getComputedStyle(document.querySelector("footer")).height);
+    // document.documentElement.style.setProperty('--footerheight', window.getComputedStyle(document.querySelector("footer")).height);
   }, []);
 
   return (
