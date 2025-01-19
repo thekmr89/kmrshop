@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kmrshop/static/css/main.6c6608dc.css",
-    "main.js": "/kmrshop/static/js/main.498db3db.js",
+    "main.js": "/kmrshop/static/js/main.015fec0b.js",
     "static/js/488.cf566f58.chunk.js": "/kmrshop/static/js/488.cf566f58.chunk.js",
     "static/media/fa-solid-900.ttf": "/kmrshop/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/product-listing.webp": "/kmrshop/static/media/product-listing.3a29b2db3c0921fbd023.webp",
@@ -27,11 +27,11 @@
     "static/media/electronics.svg": "/kmrshop/static/media/electronics.19765b2370768e8e75c6.svg",
     "static/media/jewelery.svg": "/kmrshop/static/media/jewelery.2d096ab2beefe999ec85.svg",
     "main.6c6608dc.css.map": "/kmrshop/static/css/main.6c6608dc.css.map",
-    "main.498db3db.js.map": "/kmrshop/static/js/main.498db3db.js.map",
+    "main.015fec0b.js.map": "/kmrshop/static/js/main.015fec0b.js.map",
     "488.cf566f58.chunk.js.map": "/kmrshop/static/js/488.cf566f58.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c6608dc.css",
-    "static/js/main.498db3db.js"
+    "static/js/main.015fec0b.js"
   ]
 }
