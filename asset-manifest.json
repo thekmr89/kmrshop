@@ -1,37 +1,29 @@
 {
   "files": {
-    "main.css": "/kmrshop/static/css/main.6c6608dc.css",
-    "main.js": "/kmrshop/static/js/main.6f9c3683.js",
+    "main.css": "/kmrshop/static/css/main.973f6ece.css",
+    "main.js": "/kmrshop/static/js/main.d99f9b03.js",
     "static/js/488.cf566f58.chunk.js": "/kmrshop/static/js/488.cf566f58.chunk.js",
-    "static/media/fa-solid-900.ttf": "/kmrshop/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/product-listing.webp": "/kmrshop/static/media/product-listing.3a29b2db3c0921fbd023.webp",
     "static/media/bannerimg.png": "/kmrshop/static/media/bannerimg.3ddfdd02f64ce89ce8cf.png",
-    "static/media/fa-brands-400.ttf": "/kmrshop/static/media/fa-brands-400.1815e00441357e01619e.ttf",
-    "static/media/fa-solid-900.woff2": "/kmrshop/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
-    "static/media/fa-brands-400.woff2": "/kmrshop/static/media/fa-brands-400.c210719e60948b211a12.woff2",
-    "static/media/fa-regular-400.ttf": "/kmrshop/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
     "static/media/IBM.woff": "/kmrshop/static/media/IBM.bb6205bd4452201e35e6.woff",
     "static/media/IBM.woff2": "/kmrshop/static/media/IBM.10561dc0a45549af6387.woff2",
     "static/media/Satoshi-Bold.woff": "/kmrshop/static/media/Satoshi-Bold.7c3c89f386d83f9930c9.woff",
     "static/media/RationalDisplay-Medium.woff": "/kmrshop/static/media/RationalDisplay-Medium.7ef28060d20917f74da2.woff",
     "static/media/RationalDisplay-SemiBold.woff": "/kmrshop/static/media/RationalDisplay-SemiBold.dd39bee1641808dd6696.woff",
-    "static/media/fa-regular-400.woff2": "/kmrshop/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
     "static/media/Satoshi-Bold.woff2": "/kmrshop/static/media/Satoshi-Bold.a777bf28efd7d2e58d00.woff2",
     "static/media/RationalDisplay-Medium.woff2": "/kmrshop/static/media/RationalDisplay-Medium.182b4370b0946ee70a3a.woff2",
     "static/media/RationalDisplay-SemiBold.woff2": "/kmrshop/static/media/RationalDisplay-SemiBold.b4a40b484bb6de6efe7e.woff2",
-    "static/media/fa-v4compatibility.ttf": "/kmrshop/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
-    "static/media/fa-v4compatibility.woff2": "/kmrshop/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
     "static/media/women-clothing.svg": "/kmrshop/static/media/women-clothing.4389279803ad03531a8e.svg",
     "static/media/men-cloathing.svg": "/kmrshop/static/media/men-cloathing.946ce52460703faf7785.svg",
     "index.html": "/kmrshop/index.html",
     "static/media/electronics.svg": "/kmrshop/static/media/electronics.19765b2370768e8e75c6.svg",
     "static/media/jewelery.svg": "/kmrshop/static/media/jewelery.2d096ab2beefe999ec85.svg",
-    "main.6c6608dc.css.map": "/kmrshop/static/css/main.6c6608dc.css.map",
-    "main.6f9c3683.js.map": "/kmrshop/static/js/main.6f9c3683.js.map",
+    "main.973f6ece.css.map": "/kmrshop/static/css/main.973f6ece.css.map",
+    "main.d99f9b03.js.map": "/kmrshop/static/js/main.d99f9b03.js.map",
     "488.cf566f58.chunk.js.map": "/kmrshop/static/js/488.cf566f58.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6c6608dc.css",
-    "static/js/main.6f9c3683.js"
+    "static/css/main.973f6ece.css",
+    "static/js/main.d99f9b03.js"
   ]
 }
