@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useMaster } from '../Components/MasterPage';
-import { Link, useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'; 
+import { useParams } from 'react-router-dom';
+import slugify from 'slugify';
+import { ProductCard } from '../Components/ProductCard';
 
 export const ProductListing = () => {
-  const { productData, categories, slugifytitle, addtoCart, removefromCart, cartItems } = useMaster(); 
+  const { productData, categories, addtoCart, removefromCart, cartItems } = useMaster();
   const { category: urlCategory } = useParams();
-
+  
   const [visibleProductCount, setVisibleProductCount] = useState(3);
   const [category, setCategory] = useState(urlCategory);
   
@@ -16,17 +16,19 @@ export const ProductListing = () => {
     setCategory(urlCategory);
   }, [urlCategory]);
 
-  const categoryExists = categories.some(cat => slugifytitle(cat) === category);
-  const filteredProducts = categoryExists ? productData.filter(product => slugifytitle(product.category) === category) : [];
+  const categoryExists = categories.some(cat => slugify(cat) === category);
+  const filteredProducts = categoryExists
+    ? productData.filter(product => slugify(product.category) === category)
+    : [];
 
   const loadMore = () => {
-    setVisibleProductCount(prevVisibleProductCount => prevVisibleProductCount + 3);
+    setVisibleProductCount(prev => prev + 3);
   };
 
   return (
     <div className="prod-List-secA">
       <div className="container">
-        {!categoryExists && <div>Category Not found</div>}
+        {!categoryExists && <div>Category Not Found</div>}
         {categoryExists && (
           <>
             <div className="heading text-center">
@@ -36,32 +38,18 @@ export const ProductListing = () => {
               {filteredProducts.slice(0, visibleProductCount).map(product => {
                 const isProductInCart = cartItems.some(item => item.id === product.id);
                 return (
-                  <div className="item" key={product.id}>
-                    <Link to={`/kmrshop/products/${slugifytitle(product.category)}/${product.id}`} className='figure' onClick={() => window.scrollTo({ top: 0 })}>
-                      <img src={product.image} alt={product.title} />
-                      <span className="strip">${product.price}</span>
-                      <span className="desc">{product.category}</span>
-                    </Link>
-                    <figcaption>
-                      <div className="upr-ttl">
-                        <h4>{product.title}</h4>
-                      </div>
-                      {!isProductInCart ?
-                        <button className="add-to-cart" onClick={() => addtoCart(product)}>
-                          Add to cart <FontAwesomeIcon icon={faCircleArrowRight} />
-                        </button>
-                        :
-                        <button className="add-to-cart" onClick={() => removefromCart(product)}>
-                          <FontAwesomeIcon icon={faTrash} />
-                        </button>
-                      }
-                    </figcaption>
-                  </div>
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    isProductInCart={isProductInCart}
+                    addtoCart={addtoCart}
+                    removefromCart={removefromCart}
+                  />
                 );
               })}
             </div>
             {visibleProductCount < filteredProducts.length && (
-              <button onClick={loadMore} className='btn' >Load More</button>
+              <button onClick={loadMore} className='btn'>Load More</button>
             )}
           </>
         )}

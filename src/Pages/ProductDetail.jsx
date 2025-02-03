@@ -1,9 +1,10 @@
 import React from 'react';
 import { useMaster } from '../Components/MasterPage';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'; 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { ProductCard } from '../Components/ProductCard';
 import '@splidejs/react-splide/css';
 
 export const ProductDetail = () => {
@@ -71,27 +72,13 @@ export const ProductDetail = () => {
           >
             {filteredProducts.map(product => (
               <SplideSlide key={product.id}>
-                <div className="item">
-                  <Link to={`/kmrshop/products/${slugifytitle(product.category)}/${product.id}`} className='figure' onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <img src={product.image} alt={product.title} />
-                    <span className="strip">${product.price}</span>
-                    <span className="desc">{product.category}</span>
-                  </Link>
-                  <figcaption>
-                    <div className="upr-ttl">
-                      <h4>{product.title}</h4>
-                    </div>
-                    {!cartItems.some(item => item.id === product.id) ?
-                      <button className="add-to-cart" onClick={() => addtoCart(product)}>
-                        Add to cart <FontAwesomeIcon icon={faCircleArrowRight} />
-                      </button>
-                      :
-                      <button className="add-to-cart" onClick={() => removefromCart(product)}>
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
-                    }
-                  </figcaption>
-                </div>
+                <ProductCard
+                    key={product.id}
+                    product={product}
+                    isProductInCart={isProductInCart}
+                    addtoCart={addtoCart}
+                    removefromCart={removefromCart}
+                  />
               </SplideSlide>
             ))}
           </Splide>

@@ -6,8 +6,8 @@ import { ProductListing } from './Pages/ProductListing';
 import { ProductDetail } from './Pages/ProductDetail';
 import { PageNotFound } from './Pages/PageNotFound';
 import { MasterPage } from './Components/MasterPage';
-import './assets/css/style.css';
-import '@fortawesome/fontawesome-free/css/all.css';
+import './assets/fonts/stylesheet.css';
+import './assets/sass/style.css';
 
 function App() {
   useEffect(() => {

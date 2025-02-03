@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faShoppingBag,faXmark,faTrash,faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { Icon } from '@iconify/react/dist/iconify.js';
 import axios from 'axios';
 import slugify from 'slugify'; 
 
@@ -68,15 +67,15 @@ export const MasterPage = ({ children }) => {
                         <div className="colB">
                             <ul className='nav'>
                                 <li className='hasdropdown'>
-                                    <Link to={'/products'}>Products</Link>
+                                    <Link to={'/kmrshop/products'}>Products</Link>
                                     <menu className="dropdown-menu">
                                         {categories.map((category, index) => (
-                                            <li key={index}><Link to={`/products/${slugifytitle(category)}`} onClick={() => window.scrollTo({ top: 0 })}>{category}</Link></li>
+                                            <li key={index}><Link to={`/kmrshop/products/${slugifytitle(category)}`} onClick={() => window.scrollTo({ top: 0 })}>{category}</Link></li>
                                         ))}
                                     </menu>
                                 </li>
                             </ul>
-                            <button className="btn" onClick={() => showPop('model-cart')}><FontAwesomeIcon icon={faShoppingBag} /> Cart {cartItems.length > 0 && <span className="dot">{cartItems.length}</span>}</button>
+                            <button className="btn" onClick={() => showPop('model-cart')}><Icon icon="ion:bag-handle" width="20" height="20" /> Cart {cartItems.length > 0 && <span className="dot">{cartItems.length}</span>}</button>
                         </div>
                     </div>
                 </header>
@@ -91,7 +90,7 @@ export const MasterPage = ({ children }) => {
                     </div>
                 </footer> */}
                 <div className={`model model-cart ${pop === 'model-cart' ? 'is-open' : ''}`}>
-                    <button className="close" onClick={() => hidePop('model-cart')}><FontAwesomeIcon icon={faXmark} /></button>
+                    <button className="close" onClick={() => hidePop('model-cart')}><Icon icon="material-symbols:close-rounded" width="12" height="12" /></button>
                     <div className="model-body">
                         <div className="cart-titl">
                             <h3>Cart</h3>
@@ -108,14 +107,14 @@ export const MasterPage = ({ children }) => {
                                                 <span>{title}</span>
                                                 <p>${price}</p>
                                             </div>
-                                            <button className='delt-btn' onClick={() => removefromCart(cart)}><FontAwesomeIcon icon={faTrash} /></button>
+                                            <button className='delt-btn' onClick={() => removefromCart(cart)}><Icon icon="fluent:delete-48-filled" width="12" height="12" /></button>
                                         </div>
                                     );
                                 })
                             }
                             {cartItems.length === 0 && 
                                 <div className="no-item">
-                                    <FontAwesomeIcon icon={faTriangleExclamation} />
+                                    <Icon icon="ic:outline-error" width="12" height="12" />
                                     <p>Nothing in Cart!</p>
                                 </div>
                             }

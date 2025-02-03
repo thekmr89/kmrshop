@@ -1,4 +1,3 @@
-import '../assets/sass/product/product.css'
 import { useMaster } from '../Components/MasterPage';
 import { Link } from 'react-router-dom';
 
@@ -22,12 +21,23 @@ export const ProductCategory = () => {
                         <h3>Our Products</h3>
                     </div>
                     <div className="grid">
-                    {categories.map((category, index) => (
-                            <Link className='col' key={index} to={`/kmrshop/products/${slugifytitle(category)}`} onClick={() => window.scrollTo({ top: 0 })}>
-                                <figure> <img src={require(`../assets/images/category/${categoryImages[index]}`)} alt="" /></figure>
-                                <figcaption><h5>{category}</h5></figcaption>
-                            </Link>
-                        ))}
+                        {categories.map((category, index) => {
+                            const slugifiedCategory = slugifytitle(category);
+                            return (
+                                <Link 
+                                    className='col' 
+                                    key={index} 
+                                    to={`/kmrshop/products/${slugifiedCategory}`} 
+                                    onClick={() => window.scrollTo({ top: 0 })}>
+                                    <figure> 
+                                        <img src={require(`../assets/images/category/${categoryImages[index]}`)} alt={category} />
+                                    </figure>
+                                    <figcaption>
+                                        <h5>{category}</h5>
+                                    </figcaption>
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
