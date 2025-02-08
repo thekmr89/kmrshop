@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kmrshop/static/css/main.973f6ece.css",
-    "main.js": "/kmrshop/static/js/main.d99f9b03.js",
+    "main.css": "/kmrshop/static/css/main.8b23040c.css",
+    "main.js": "/kmrshop/static/js/main.0f7214b3.js",
     "static/js/488.cf566f58.chunk.js": "/kmrshop/static/js/488.cf566f58.chunk.js",
     "static/media/product-listing.webp": "/kmrshop/static/media/product-listing.3a29b2db3c0921fbd023.webp",
     "static/media/bannerimg.png": "/kmrshop/static/media/bannerimg.3ddfdd02f64ce89ce8cf.png",
@@ -18,12 +18,12 @@
     "index.html": "/kmrshop/index.html",
     "static/media/electronics.svg": "/kmrshop/static/media/electronics.19765b2370768e8e75c6.svg",
     "static/media/jewelery.svg": "/kmrshop/static/media/jewelery.2d096ab2beefe999ec85.svg",
-    "main.973f6ece.css.map": "/kmrshop/static/css/main.973f6ece.css.map",
-    "main.d99f9b03.js.map": "/kmrshop/static/js/main.d99f9b03.js.map",
+    "main.8b23040c.css.map": "/kmrshop/static/css/main.8b23040c.css.map",
+    "main.0f7214b3.js.map": "/kmrshop/static/js/main.0f7214b3.js.map",
     "488.cf566f58.chunk.js.map": "/kmrshop/static/js/488.cf566f58.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.973f6ece.css",
-    "static/js/main.d99f9b03.js"
+    "static/css/main.8b23040c.css",
+    "static/js/main.0f7214b3.js"
   ]
 }
