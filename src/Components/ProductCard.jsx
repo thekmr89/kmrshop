@@ -12,20 +12,6 @@ export const ProductCard = ({ product, addtoCart, removefromCart }) => {
 
     return (
         <div className="item">
-            {rating && (
-                <>
-                    <ReactStars
-                        count={5}
-                        size={25}
-                        value={rating.rate}
-                        halfIcon={<Icon icon="mdi:star-half" />}
-                        filledIcon={<Icon icon="mdi:star" />}
-                        emptyIcon={<Icon icon="mdi:star-outline" />}
-                        activeColor="#ffd700"
-                    />
-                    <span>{rating.count}</span>
-                </>
-            )}
             <Link to={`/kmrshop/products/${slugifytitle(category)}/${id}`} className='figure'>
                 <img src={image} alt={title} />
                 <span className="strip">${price}</span>
@@ -35,6 +21,22 @@ export const ProductCard = ({ product, addtoCart, removefromCart }) => {
                 <div className="upr-ttl">
                     <h4>{title}</h4>
                 </div>
+                {rating && (
+                    <>
+                        <div className="rtnd-div">
+                            <ReactStars
+                                count={5}
+                                size={25}
+                                value={rating.rate}
+                                halfIcon={<Icon icon="mdi:star-half" />}
+                                filledIcon={<Icon icon="mdi:star" />}
+                                emptyIcon={<Icon icon="mdi:star-outline" />}
+                                activeColor="#ffd700"
+                            />
+                            <span className="ttl-rt">({rating.count})</span>
+                        </div>
+                    </>
+                )}
                 {!isProductInCart ? (
                     <button className="add-to-cart" onClick={() => addtoCart(product)}>
                         Add to cart <Icon icon="material-symbols:bookmark-added-rounded" width="24" height="24" />

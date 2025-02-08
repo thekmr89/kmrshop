@@ -90,7 +90,7 @@ export const MasterPage = ({ children }) => {
                     </div>
                 </footer> */}
                 <div className={`model model-cart ${pop === 'model-cart' ? 'is-open' : ''}`}>
-                    <button className="close" onClick={() => hidePop('model-cart')}><Icon icon="material-symbols:close-rounded" width="12" height="12" /></button>
+                    <button className="close" onClick={() => hidePop('model-cart')}><Icon icon="material-symbols:close-rounded" width="22" height="22" /></button>
                     <div className="model-body">
                         <div className="cart-titl">
                             <h3>Cart</h3>
@@ -107,14 +107,14 @@ export const MasterPage = ({ children }) => {
                                                 <span>{title}</span>
                                                 <p>${price}</p>
                                             </div>
-                                            <button className='delt-btn' onClick={() => removefromCart(cart)}><Icon icon="fluent:delete-48-filled" width="12" height="12" /></button>
+                                            <button className='delt-btn' onClick={() => removefromCart(cart)}><Icon icon="fluent:delete-48-filled" width="20" height="20" /></button>
                                         </div>
                                     );
                                 })
                             }
                             {cartItems.length === 0 && 
                                 <div className="no-item">
-                                    <Icon icon="ic:outline-error" width="12" height="12" />
+                                    <Icon icon="ic:outline-error" width="52" height="52" />
                                     <p>Nothing in Cart!</p>
                                 </div>
                             }

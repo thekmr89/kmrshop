@@ -22,12 +22,11 @@ export const ProductCategory = () => {
                     </div>
                     <div className="grid">
                         {categories.map((category, index) => {
-                            const slugifiedCategory = slugifytitle(category);
                             return (
                                 <Link 
                                     className='col' 
                                     key={index} 
-                                    to={`/kmrshop/products/${slugifiedCategory}`} 
+                                    to={`/kmrshop/products/${slugifytitle(category)}`} 
                                     onClick={() => window.scrollTo({ top: 0 })}>
                                     <figure> 
                                         <img src={require(`../assets/images/category/${categoryImages[index]}`)} alt={category} />

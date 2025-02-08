@@ -10,7 +10,7 @@ export const PageNotFound = () => {
                 <div className="banner-wrapper">
                     <div className="content">
                         <h1>Page Not Found</h1>
-                        <Link className="btn" to={'/products'}><FontAwesomeIcon icon={faShoppingBag} />Shop Now</Link>
+                        <Link className="btn" to={'/kmrshop/products'}><FontAwesomeIcon icon={faShoppingBag} />Shop Now</Link>
                     </div>
                 </div>
             </div>

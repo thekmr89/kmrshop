@@ -5,13 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons'; 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { ProductCard } from '../Components/ProductCard';
+import ReactStars from "react-rating-stars-component";               
+import { Icon } from '@iconify/react/dist/iconify.js';
 import '@splidejs/react-splide/css';
 
 export const ProductDetail = () => {
-  const { productData, slugifytitle, addtoCart, removefromCart, cartItems } = useMaster();
+  const { productData, slugifytitle, addtoCart, removefromCart, cartItems} = useMaster();
   const { id, category } = useParams();
   const product = productData.find(product => product.id === parseInt(id));
-  const filteredProducts = productData.filter(product => slugifytitle(product.category) === category && product.id !== parseInt(id));
+  const filteredProducts = productData.filter(product => slugifytitle(product.category) === slugifytitle(category) && product.id !== parseInt(id));
   const isProductInCart = product && cartItems.some(item => item.id === product.id);
 
   if (!product) {
@@ -30,6 +32,22 @@ export const ProductDetail = () => {
               <div className="card">
                 <h1>{product.title}</h1>
                 <span>${product.price}</span>
+                {product.rating && (
+                    <>
+                        <div className="rtnd-div">
+                            <ReactStars
+                                count={5}
+                                size={25}
+                                value={product.rating.rate}
+                                halfIcon={<Icon icon="mdi:star-half" />}
+                                filledIcon={<Icon icon="mdi:star" />}
+                                emptyIcon={<Icon icon="mdi:star-outline" />}
+                                activeColor="#ffd700"
+                            />
+                            <span className="ttl-rt">({product.rating.count})</span>
+                        </div>
+                    </>
+                )}
                 <p>{product.description}</p>
                 {!isProductInCart ?
                     <button className="add-to-cart" onClick={() => addtoCart(product)}>

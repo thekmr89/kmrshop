@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Home } from './Pages/Home';
 import { ProductCategory } from './Pages/ProductCategory';
@@ -10,11 +9,6 @@ import './assets/fonts/stylesheet.css';
 import './assets/sass/style.css';
 
 function App() {
-  useEffect(() => {
-    document.documentElement.style.setProperty('--headerheight', window.getComputedStyle(document.querySelector("header")).height);
-    // document.documentElement.style.setProperty('--footerheight', window.getComputedStyle(document.querySelector("footer")).height);
-  }, []);
-
   return (
     <Router>
       <MasterPage>
